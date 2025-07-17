@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务器规则 - 二氧化硅生存服务器</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .rules-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            min-height: 600px;
+        }
+        .sidebar {
+            width: 270px;
+            border-right: 1px solid #eee;
+            padding: 28px 0 28px 0;
+            background: #f7f8fa;
+            border-radius: 16px 0 0 16px;
+            overflow-y: auto;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0 0 0 18px;
+            margin: 0;
+        }
+        .sidebar .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 8px 0 4px 0;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .sidebar .sidebar-title.level-1 { margin-left: 0; }
+        .sidebar .sidebar-title.level-2 { margin-left: 18px; font-size: 1rem; }
+        .sidebar .sidebar-title.level-3 { margin-left: 36px; font-size: 0.97rem; }
+        .sidebar .sidebar-title.level-4 { margin-left: 54px; font-size: 0.95rem; }
+        .sidebar .sidebar-title.level-5 { margin-left: 72px; font-size: 0.93rem; }
+        .sidebar .sidebar-title.level-6 { margin-left: 90px; font-size: 0.91rem; }
+        .sidebar .collapsed {
+            color: #aaa;
+        }
+        .sidebar .active {
+            color: #1976d2;
+        }
+        .markdown-content {
+            flex: 1;
+            padding: 38px 40px 38px 40px;
+            overflow-x: auto;
+        }
+        @media (max-width: 900px) {
+            .rules-container { flex-direction: column; }
+            .sidebar { width: 100%; border-radius: 16px 16px 0 0; border-right: none; border-bottom: 1px solid #eee; }
+            .markdown-content { padding: 18px 8px 18px 8px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="rules.html" class="active">规则</a></li>
+            <li><a href="team.html">管理组</a></li>
+            <li><a href="shop.html" class="shop">商城</a></li>
+        </ul>
+        <div class="server-ip">服务器IP：mc.mcsio2.cn <span class="server-qq">QQ群：902147486</span></div>
+    </nav>
+    <div class="rules-container">
+        <aside class="sidebar" id="sidebar"></aside>
+        <main class="markdown-content" id="markdown-content"></main>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/marked/15.0.12/marked.min.js"></script>
+    <script src="rules.js"></script>
+</body>
+</html> 

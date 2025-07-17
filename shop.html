@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务器商城 - 二氧化硅生存服务器</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .shop-iframe-container {
+            width: 100vw;
+            height: calc(100vh - 60px);
+            min-height: 600px;
+            background: #f4f6fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .shop-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            min-height: 600px;
+        }
+        @media (max-width: 700px) {
+            .shop-iframe-container { min-height: 400px; }
+            .shop-iframe { min-height: 400px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="rules.html">规则</a></li>
+            <li><a href="team.html">管理组</a></li>
+            <li><a href="shop.html" class="shop active">商城</a></li>
+        </ul>
+        <div class="server-ip">服务器IP：mc.mcsio2.cn <span class="server-qq">QQ群：902147486</span></div>
+    </nav>
+    <div class="shop-iframe-container">
+        <iframe class="shop-iframe" src="https://minepay.top/#/shop?id=7567" allowfullscreen></iframe>
+    </div>
+</body>
+</html> 
