@@ -1,0 +1,36 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+
+      - name: 打包项目为 zip
+        run: |
+          zip -r mcsio2_web.zip . -x "*.git*"
+
+      - name: 获取提交信息
+        id: vars
+        run: |
+          echo "MSG<<EOF" >> $GITHUB_ENV
+          git log -1 --pretty=%B >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+          echo "HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: 创建 Release 并上传 zip
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: mcsio2_web-${{ env.HASH }}
+          name: mcsio2_web-${{ env.HASH }}
+          body: ${{ env.MSG }}
+          files: mcsio2_web.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
